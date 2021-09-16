@@ -70,3 +70,37 @@ print("\nrange(14,3,-2): \t", end="")
 for x in range (14,3,-2):
     print("%4d" % x, end="")
 print("\n")
+
+x=1
+for i in range(1,10):
+    x=x+(i+1)
+    
+print(x)
+
+x=1
+i=1
+while i<=9:
+    x=x+(i+1)
+    i+=1
+print(x)
+
+n=5
+x=1
+for l in range(1,6):
+    x=x*l
+print(x)
+
+n=10
+x=1
+i=1
+while i<=n:
+    x*=1
+    i+=1
+    
+    print(x)
+    
+    x=1
+for i in range(1,9,2):
+    x=x+(i+2)
+
+        print(x)
