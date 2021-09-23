@@ -157,3 +157,31 @@ maradek=a
 while maradek>=b:
     maradek=maradek-b
 print("maradek: %4d" % maradek)
+
+
+a=int(input("add meg az első számot:"))
+b=int(input("ad meg a második számot:"))
+
+while a<0:
+    print("a szám csak pozitiv lehet!")
+    a=(input("add meg az első számot:"))
+    
+while b<0:
+    print("a szám csak pozitiv lehet!")
+    b=(input("add meg az első számot:"))
+    
+
+    if a<b:
+        seged=a
+        a=b
+        b=seged
+    
+    maradek=a % b
+    
+    while maradek>0:
+        a=b
+        b=maradek
+        maradek= a % b
+        
+    lko=b
+    print("a legnagyobb közös osztó a %d" % lko)
