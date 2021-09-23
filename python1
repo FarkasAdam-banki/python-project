@@ -140,3 +140,20 @@ elif y>z:
     print("%4" %y)
 else:
     print("%4" %z)
+
+
+a=int(input("add meg az első számot"))
+b=int(input("ad meg a második számot"))
+
+while a<0:
+    print("a szám nem lehet negatív")
+    a=int(input("dd meg az első számot"))
+    
+while b<0:
+    print("a szám legyen nagyobb mint 0")
+    b=int(input("ad meg a második számot"))
+    
+maradek=a
+while maradek>=b:
+    maradek=maradek-b
+print("maradek: %4d" % maradek)
