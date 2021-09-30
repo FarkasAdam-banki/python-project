@@ -241,3 +241,25 @@ for i in range(7):
         else:
             print(end=" ")
     print()
+
+
+
+A=int(input("Add meg az első számot:"))
+B=int(input("Add meg a második számot"))
+
+opcio=int(input("válassz milyen műveletet akarsz 1:+ 2:- 3:* 4:/"))
+while opcio<1 or opcio>4:
+    print("rossz input")
+    exit()
+
+if opcio==1:
+    print("a két szám összege: %d" %(A+B))
+
+elif opcio==2:
+    print("a két szám külömbsége: %d" %(A-B))
+
+elif opcio==3:
+    print("a két szám szorzata %d" %(A*B))
+
+else:
+    print("a két szám osztva: %d" %(A/B))
