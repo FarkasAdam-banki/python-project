@@ -263,3 +263,17 @@ elif opcio==3:
 
 else:
     print("a két szám osztva: %d" %(A/B))
+
+
+
+számkitaláló
+
+import random
+a=random.randint(0,100)
+while saját !=a:
+    saját = int(input("adj meg egy számot"))
+    if saját < a:
+        print("a szám nagyobb")
+    elif saját > a:
+        print("a szám kisebb")
+print("kitaláltad szép munka")
