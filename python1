@@ -277,3 +277,19 @@ while saját !=a:
     elif saját > a:
         print("a szám kisebb")
 print("kitaláltad szép munka")
+
+
+
+
+0 ás megállo átlag
+
+eredmeny=0
+n=0
+szam=int(input("Adj meg egy egész számot:"))
+
+while szam !=0:
+    eredmeny=eredmeny+szam
+    n+=1
+    szam=int(input("Adj meg egy egész számot:"))
+print("A beolvasott számok összege. %d" %eredmeny)
+print("A beolvsott számok számtani átlaga: %f"  %(eredmeny/n))
