@@ -293,3 +293,23 @@ while szam !=0:
     szam=int(input("Adj meg egy egész számot:"))
 print("A beolvasott számok összege. %d" %eredmeny)
 print("A beolvsott számok számtani átlaga: %f"  %(eredmeny/n))
+
+
+
+
+
+
+tábláztos max min stb
+
+szamok=[int(input("adj meg egy számot"))]
+i=0
+eredmeny=0
+while szamok[i] !=0:
+    eredmeny+=szamok[i]
+    i+=1
+    szamok.append(int(input("Adj meg egy számot")))
+szamok.remove(0)
+print("A beolvasott számok összege. %d" %eredmeny)
+print("A beolvsott számok számtani átlaga: %2f"  %(eredmeny/(len(szamok)-1)))
+print("A beolvasott számok legnagyobb értéke: %d" %(max(szamok) ))
+print("A beolvasott számok legkisebb értéke: %d" %(min(szamok)))
