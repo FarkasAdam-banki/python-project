@@ -339,3 +339,28 @@ for i in range(1,len(szamok)):
     if maximum<szamok[i]:
         maximum=szamok[i]
 print(maximum)
+
+
+
+
+
+random szám számlálo
+
+
+
+import random
+t=[random.randint(1,10)]
+for i in range(1,100):
+    t.append(random.randint(1,10))
+print(t)
+
+
+szamok=[0,0,0,0,0,0,0,0,0,0]
+
+
+for i in t:
+    for j in range(0,10):
+        if i==(j+1):
+            szamok[j]+=1
+for k in range(0,10):
+    print("a(z) %d szam %d alkalommal szerepel a tömben "  %((k+1), szamok[k]))
