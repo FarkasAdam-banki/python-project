@@ -406,3 +406,28 @@ for i in range(0,100):
 for k in range (0,4):
     print("A %d számjegyből %d találat volt" %((k+1)*11,szamok[j]))
     
+
+
+
+
+import random
+szamok=[0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+t=[random.randint(10,50)]
+for i in range(0,100):
+    t.append(random.randint(10,50))
+print(t)
+
+
+result=[]
+for i in t:
+    for j in range(0,14):
+        str1=str(i)
+        for k in str1:
+            result.append(int(k))
+        osszeg=result[0]+result[1]
+        result.clear()
+        if osszeg==(j+1):
+            szamok[j]+=1
+            
+for m in range (0,14):
+    print("ha a számjegyek összeg %d, abból %d találat volt!" %((m+1),szamok[m]))
