@@ -431,3 +431,32 @@ for i in t:
             
 for m in range (0,14):
     print("ha a számjegyek összeg %d, abból %d találat volt!" %((m+1),szamok[m]))
+
+
+
+
+
+
+
+import random
+szamok=[0,0]
+t=[random.randint(10,50)]
+for i in range(100):
+    t.append(random.randint(10,50))
+print(t)
+
+
+seged2=[]
+for i in t:
+    for j in range(0,1):
+        seged=str(i)
+        for k in seged:
+            seged2.append(int(k))
+        if seged2[1]==5:
+            szamok[0]+=1
+        elif seged2[1]==7:
+            szamok[1]+=1
+        seged2.clear()
+print("A random számokból 5-ö végződésűből %d elem van" %szamok[0])
+print("A random számokból 7-es végződésűből %d elem van" %szamok[1])
+            
