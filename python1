@@ -460,3 +460,64 @@ for i in t:
 print("A random számokból 5-ö végződésűből %d elem van" %szamok[0])
 print("A random számokból 7-es végződésűből %d elem van" %szamok[1])
             
+
+
+import random
+t=[random.randint(1,1000)]
+for i in range(1,100):
+    t.append(random.randint(1,1000))
+print(t)
+
+
+n=0
+print("A páros számok:")
+for i in t:
+    if i%2==0:
+        print("%2d"%i, end=",")
+        n+=1
+print("A páros számok  darabszám: %d" %n)
+
+for l in range(100):
+    if l<(len(t)-1):
+        if t[l]<t[l+1]:
+            print(t[l],end=" ")
+            
+            
+            
+            
+import random
+t=[random.randint(-50,50)]
+for i in range(1,100):
+    t.append(random.randint(-50,50))
+print(t)
+
+for i in range(100):
+    if t[i]<0:
+        t[i]=abs(t[i])
+        
+print(t)
+
+
+
+
+
+import random
+t=[random.randint(-50,50)]
+for i in range(1,100):
+    t.append(random.randint(-50,50))
+print(t)
+
+for i in range(100):
+    if t[i]<0 and t[i]%2!=0:
+        print("%d" %t[i], end=" ,")
+  
+  
+  
+hf:sorrendbe rendezni növekvöbe 
+tomb=[]
+tomb.append(int(input("Adj meg egy számot:  ")))
+for i in range(10):
+    szam=int(input("Adj meg egy számot:  "))
+    while szam in tomb:
+        szam=int(input("Ez a szám volt adj meg egy újat"))
+    tomb.append(szam)
