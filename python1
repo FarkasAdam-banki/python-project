@@ -521,3 +521,22 @@ for i in range(10):
     while szam in tomb:
         szam=int(input("Ez a szám volt adj meg egy újat"))
     tomb.append(szam)
+
+
+
+
+
+
+
+házi kész
+
+elemek = []
+
+for i in range(0, 10):
+    szam = int(input("Adj meg egy számot 1-10 között: "))
+    while szam in elemek:
+        szam = (int(input("Ezt a számot már megadtad. Adj meg egy újat:  ")))
+    elemek.append(szam)
+
+elemek.sort()
+print(elemek)
