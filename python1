@@ -657,3 +657,14 @@ print(ujlista3)
 
 szamok2=[x for x in range(5,50,3)]  #belerakja a listába a számokat 5-50
 print(szamok2)
+
+
+
+hf:
+elemek=[]
+for i in range(10):
+    elemek.append(input("Adj meg elemet"))
+    
+lista=[x for x in lista if type(x)==int]
+print(lista)
+
