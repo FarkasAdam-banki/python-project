@@ -668,3 +668,11 @@ for i in range(10):
 lista=[x for x in lista if type(x)==int]
 print(lista)
 
+
+hazikesz
+
+elemek = []
+for i in range(10):
+    elemek.append(input("Adj meg elemet"))
+lista = [int(elem) for elem in elemek if elem.isdigit()]
+print(lista)
