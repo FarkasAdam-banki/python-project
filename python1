@@ -676,3 +676,44 @@ for i in range(10):
     elemek.append(input("Adj meg elemet"))
 lista = [int(elem) for elem in elemek if elem.isdigit()]
 print(lista)
+
+
+
+
+adatok=[[],[],[],[]]
+for i in range(3):
+    adatok[0].append(str(input("Név: ")))
+    adatok[1].append(str(input("szül.hely:")))
+    adatok[2].append(str(input("Anyja neve: ")))
+    adatok[3].append(int(input("Születéi dátum:  ")))
+print(adatok)
+
+
+#for l in range(len(adatok[0])):
+#    if adatok[0][l][:0]<"M":
+ #       print("név:   %s" %adatok[0][l])
+  #      print("Szül.hely:   %s" %adatok[1][l])
+   #     print("Anyja neve:     %s" %adatok[2][l])
+        
+
+elso=[]
+elso.append(adatok[0][0])
+elso.append(adatok[1][0])
+elso.append(adatok[2][0])
+elso.append(adatok[3][0])
+print(elso)
+
+masod=[]
+masod.append(adatok[0][1])
+masod.append(adatok[1][1])
+masod.append(adatok[2][1])
+masod.append(adatok[3][1])
+print(masod)
+
+
+har=[]
+har.append(adatok[0][2])
+har.append(adatok[1][2])
+har.append(adatok[2][2])
+har.append(adatok[3][2])
+print(har)
