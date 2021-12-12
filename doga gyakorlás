@@ -85,3 +85,33 @@ auto.pop(5)
 auto.insert(5,"Győzelem")
 
 print(auto)
+
+
+
+
+
+
+
+
+
+4. feladat nincs kész:
+
+
+import random
+t=[random.randint(1,50)]
+for i in range(100):
+    t.append(random.randint(1,50))
+print(t)
+
+duplak=[]
+
+for l in t:
+    if l in t:
+        duplak.append(l)
+        
+        
+print(duplak)
+
+
+
+
