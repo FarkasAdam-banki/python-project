@@ -52,3 +52,36 @@ x=11
 for i in range(1,11):
     x=x-1
     print( "%d" %x, end=",")
+
+
+
+
+
+
+
+
+
+
+
+
+Doga házik:
+
+
+első:
+
+auto=[]
+
+for i in range(11):
+    auto.append(str(input("Adj meg egy kocsi márkát:  ")))
+    
+print(auto)
+
+
+print("A megadott autók felcsrélve és a hatodik elem Győzelemre Átírva:")
+
+auto.reverse()
+
+auto.pop(5)
+auto.insert(5,"Győzelem")
+
+print(auto)
