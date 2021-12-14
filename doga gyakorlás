@@ -147,3 +147,15 @@ for i in lista:
         
         
 print(lista)
+
+
+
+2es feladat kész
+
+lista=['p','q']
+szamok=['1','2','3','4','5','6','7','8','9','10']
+
+eredmeny=[lista[i]+szamok[j]for j in range(len(szamok)) for i in range(len(lista))]
+
+
+print(eredmeny)
