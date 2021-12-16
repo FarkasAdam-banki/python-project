@@ -809,3 +809,25 @@ paratlan=[s for s in lista if s%2!=0]
 print(paros)
 print(paratlan)
 print("ashgdazgfaf %d " %(max(paros)))
+
+
+
+
+x=int(input("Adj meg egy műveletet: "))
+y=int(input("Adj meg egy számot: "))
+z=int(input("adj meg egy számot: "))
+
+def adas(y,z):
+    return y+z
+def kivon(y,z):
+    return y-z
+def szorzas(y,z):
+    return(y*z)
+if x==1:
+    print(adas(y,z))
+elif x==2:
+    print(kivon(y,z))
+elif x==3:
+    print(szorzas(y,z))
+else:
+    print("rossz input!")
