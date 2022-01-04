@@ -831,3 +831,20 @@ elif x==3:
     print(szorzas(y,z))
 else:
     print("rossz input!")
+
+
+
+
+
+
+def maganh(x):
+    maganhangzok=['a','á','o','e','ö','ü','ú','ű','í','i','é','ó','ő','u',]
+    db=0
+    for i in x:
+        if i in maganhangzok:
+            db+=1
+    return db 
+    
+x=str(input("Adj meg egy szöbeget csak kis betűkkel :  "))    
+darab=maganh(x)
+print(darab)
