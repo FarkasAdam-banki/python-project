@@ -848,3 +848,21 @@ def maganh(x):
 x=str(input("Adj meg egy szöbeget csak kis betűkkel :  "))    
 darab=maganh(x)
 print(darab)
+
+
+
+
+
+
+
+
+
+def faktorialis(szam):
+    fakt=1
+    while(szam!=0):
+        fakt=fakt*szam
+        szam=szam-1
+    return fakt
+    
+szam=int(input("Adj meg egy számot:  "))
+print("Az adott szám faktoriálisa: %d" %faktorialis(szam))
