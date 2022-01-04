@@ -866,3 +866,23 @@ def faktorialis(szam):
     
 szam=int(input("Adj meg egy számot:  "))
 print("Az adott szám faktoriálisa: %d" %faktorialis(szam))
+
+
+
+
+
+
+def betuk(x):
+    szam=[0,0]
+    for i in x:
+        if i.isupper():
+            szam[0]+=1
+        elif i.islower():
+            szam[1]+=1
+        else:
+            pass
+    return szam
+    
+x=input("Add mge a mondatot kis és nagybetű keverve :  ")
+eredmeny=betuk(x)
+print("A mondatban %d kis és %d nagybetű volt" %(eredmeny[0],eredmeny[1]))
