@@ -886,3 +886,16 @@ def betuk(x):
 x=input("Add mge a mondatot kis és nagybetű keverve :  ")
 eredmeny=betuk(x)
 print("A mondatban %d kis és %d nagybetű volt" %(eredmeny[0],eredmeny[1]))
+
+
+
+
+def pascalh(n):
+    sor=[1]
+    y=[0]
+    for x in range(n):
+        print(sor)
+        sor=[b+j for b,j in zip(sor+y, y+sor)]
+    return n>=1
+    
+pascalh(10)
