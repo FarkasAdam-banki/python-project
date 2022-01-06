@@ -899,3 +899,9 @@ def pascalh(n):
     return n>=1
     
 pascalh(10)
+
+
+def legidosebb(fiu1,fiu2,fiu3):
+    print("A legidösebb fiu "+fiu2)
+    
+legidosebb(fiu1="Erik",fiu2="Ádám",fiu3="Tamás")
