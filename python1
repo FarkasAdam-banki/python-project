@@ -905,3 +905,36 @@ def legidosebb(fiu1,fiu2,fiu3):
     print("A legidösebb fiu "+fiu2)
     
 legidosebb(fiu1="Erik",fiu2="Ádám",fiu3="Tamás")
+
+
+
+
+
+def legfiatalabb(adatok):
+    legfiatalabb=min(adatok[1])
+    return adatok[1].index(legfiatalabb)
+
+def legidosebb(adatok):
+    legidosebb=max(adatok[1])
+    return adatok[1].index(legidosebb)
+    
+adatok=[[],[]]
+    
+    
+
+bemenet=input("Szeretnél adatokat madni? (i/n)")
+while bemenet=='i':
+    nev=input("Add meg a tljes neved :  ")
+    adatok[0].append(nev)
+    szulev=input("Add meg a zületési éved :  ")
+    adatok[1].append(szulev)
+    bemenet=input("Szeretnél adatokat madni? (i/n)")
+
+    
+    
+legfiatalabb=adatok[0][legfiatalabb(adatok)]
+legidosebb=adatok[0][legidosebb(adatok)]
+    
+    
+print("A legfiatalabb :  %s" %legfiatalabb)
+print("A legidosebb :  %s" %legidosebb)
