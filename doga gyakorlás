@@ -186,180 +186,178 @@ kjatekos = "X"
 
 def amoba():
 
+    tablam()
 
-  tablam()
 
-
-  while jatekfut:
-    lepes(kjatekos)
+    while jatekfut:
+        lepes(kjatekos)
 
    
-    futajatek()
+        futajatek()
 
     
-    jatekoscsere()
+        jatekoscsere()
   
   
-  if gyoztes == "X" or gyoztes == "O":
-    print(gyoztes + " A nyertes ")
-  elif gyoztes == None:
-    print("Döntetlen!")
+    if gyoztes == "X" or gyoztes == "O":
+        print(gyoztes + " A nyertes ")
+    elif gyoztes == None:
+        print("Döntetlen!")
 
 
 
 def tablam():
-  print("\n")
-  print(tabla[0] + " , " + tabla[1] + " , " + tabla[2] + "     1 , 2 , 3")
-  print(tabla[3] + " , " + tabla[4] + " , " + tabla[5] + "     4 , 5 , 6")
-  print(tabla[6] + " , " + tabla[7] + " , " + tabla[8] + "     7 , 8 , 9")
-  print("\n")
+    print("\n")
+    print(tabla[0] + " , " + tabla[1] + " , " + tabla[2] + "     1 , 2 , 3")
+    print(tabla[3] + " , " + tabla[4] + " , " + tabla[5] + "     4 , 5 , 6")
+    print(tabla[6] + " , " + tabla[7] + " , " + tabla[8] + "     7 , 8 , 9")
+    print("\n")
 
 
 
 def lepes(jatekos):
 
-  
-  print(jatekos + "jön")
-  position = input("Choose a position from 1-9: ")
+    print(jatekos + "jön")
+    hely = input("A számok amik közül válaszhatsz: 1-9: ")
   
 
-  joinput = False
-  while not joinput:
+    joinput = False
+    while not joinput:
 
-    
-    while hely not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-      hely = input("A számok amik közül válaszhatsz: 1-9: ")
+        
+        while hely not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            hely = input("A számok amik közül válaszhatsz: 1-9: ")
  
    
-    hely = int(hely) - 1
+        hely = int(hely) - 1
 
     
-    if tabla[hely] == "-":
-      joinput = True
-    else:
-      print("Ez a pozicio már volt válassz újat")
+        if tabla[hely] == "-":
+            joinput = True
+        else:
+            print("Ez a pozicio már volt válassz újat")
 
   
-  tabla[hely] = jatekos
+    tabla[hely] = jatekos
 
   
-  tablam()
+    tablam()
 
 
 
 def futajatek():
-  vgyoztes()
-  vdontetlen()
+        vgyoztes()
+        vdontetlen()
 
 
 
 def vgyoztes():
   
-  global gyoztes
+    global gyoztes
   
-  sorok = ksorok()
-  oszlopok = koszlopok()
-  atlo = katlo()
+    sorok = ksorok()
+    oszlopok = koszlopok()
+    atlo = katlo()
  
-  if sorok:
-    gyoztes = sorok
-  elif oszlopok:
-    gyoztes = oszlopok
-  elif atlo:
-    gyoztes = atlo
-  else:
-    gyoztes = None
+    if sorok:
+        gyoztes = sorok
+    elif oszlopok:
+        gyoztes = oszlopok
+    elif atlo:
+        gyoztes = atlo
+    else:
+        gyoztes = None
 
 
 
 def ksorok():
   
-  global futajatek
+    global futajatek
   
-  sor1 = tabla[0] == tabla[1] == tabla[2] != "-"
-  sor2 = tabla[3] == tabla[4] == tabla[5] != "-"
-  sor3 = tabla[6] == tabla[7] == tabla[8] != "-"
+    sor1 = tabla[0] == tabla[1] == tabla[2] != "-"
+    sor2 = tabla[3] == tabla[4] == tabla[5] != "-"
+    sor3 = tabla[6] == tabla[7] == tabla[8] != "-"
   
-  if sor1 or sor2 or sor3:
-    futajatek = False
-  r
-  if sor1:
-    return tabla[0] 
-  elif sor2:
-    return tabla[3] 
-  elif sor3:
-    return tabla[6] 
+    if sor1 or sor2 or sor3:
+        futajatek = False
   
-  else:
-    return None
+    if sor1:
+        return tabla[0] 
+    elif sor2:
+        return tabla[3] 
+    elif sor3:
+        return tabla[6] 
+  
+    else:
+        return None
 
 
 
 def koszlopok():
   
-  global futajatek
+    global futajatek
   
-  oszlop1 = tabla[0] == tabla[3] == tabla[6] != "-"
-  oszlop2 = tabla[1] == tabla[4] == tabla[7] != "-"
-  oszlop3 = tabla[2] == tabla[5] == tabla[8] != "-"
+    oszlop1 = tabla[0] == tabla[3] == tabla[6] != "-"
+    oszlop2 = tabla[1] == tabla[4] == tabla[7] != "-"
+    oszlop3 = tabla[2] == tabla[5] == tabla[8] != "-"
   
-  if oszlop1 or oszlop2 or oszlop3:
-    jatekfut = False
+    if oszlop1 or oszlop2 or oszlop3:
+        jatekfut = False
   
-  if oszlop1:
-    return tabla[0] 
-  elif oszlop2:
-    return tabla[1] 
-  elif oszlop3:
-    return tabla[2] 
+    if oszlop1:
+        return tabla[0] 
+    elif oszlop2:
+        return tabla[1] 
+    elif oszlop3:
+        return tabla[2] 
  
-  else:
-    return None
+    else:
+        return None
 
 
 
 def katlo():
   
-  global futajatek
+    global futajatek
   
-  atlo1 = tabla[0] == tabla[4] == tabla[8] != "-"
-  atlo2 = tabla[2] == tabla[4] == tabla[6] != "-"
+    atlo1 = tabla[0] == tabla[4] == tabla[8] != "-"
+    atlo2 = tabla[2] == tabla[4] == tabla[6] != "-"
   
-  if atlo1 or atlo2:
-    futajatek = False
+    if atlo1 or atlo2:
+        futajatek = False
   
-  if atlo1:
-    return tabla[0] 
-  elif atlo2:
-    return tabla[2]
+    if atlo1:
+        return tabla[0] 
+    elif atlo2:
+        return tabla[2]
  
-  else:
-    return None
+    else:
+        return None
 
 
 
 def vdontetlen():
   
-  global futajatek
+    global futajatek
   
-  if "-" not in tabla:
-    futajatek = False
-    return True
+    if "-" not in tabla:
+        futajatek = False
+        return True
   
-  else:
-    return False
+    else:
+        return False
 
 
 
 def jatekoscsere():
   
-  global kjatekos
+    global kjatekos
   
-  if kjatekos == "X":
-    kjatekos = "O"
+    if kjatekos == "X":
+        kjatekos = "O"
   
-  elif kjatekos == "O":
-    kjatekos = "X"
+    elif kjatekos == "O":
+        kjatekos = "X"
 
 
 amoba()
