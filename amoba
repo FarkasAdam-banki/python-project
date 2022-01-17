@@ -1,0 +1,115 @@
+tabla = [["-", "-", "-"],
+         ["-", "-", "-"],
+         ["-", "-", "-"]]
+
+
+jatekos = True 
+körök = 0
+
+def tabla_kiiras(tabla):
+  for sor in tabla:
+    for fhely in sor:
+      print(f"{fhely} ", end="")
+    print()
+
+def kilepes(f_input):
+  if f_input.lower() == "q": 
+    print("Kiléptél a Játékból!")
+    return True
+  else: return False
+
+
+def input_ell(f_input):
+  if not ni_szam(f_input): return False
+  f_input = int(f_input)
+  if not gmbk_szam(f_input): return False
+
+  return True
+
+def ni_szam(f_input):
+  if not f_input.isnumeric(): 
+    print("ilyen inputot nem tudsz megadni!")
+    return False
+  else: return True
+
+def gmbk_szam(f_input):
+  if f_input > 9 or f_input < 1: 
+    print("Ezek a számok nem 1-9ig vannak! ")
+    return False
+  else: return True
+
+def dup_szam(c_hely, tabla):
+  sor = c_hely[0]
+  oszlop = c_hely[1]
+  if tabla[sor][oszlop] != "-":
+    print("Ezen a helyen már van bábú!")
+    return True
+  else: return False
+
+def poziciok(f_input):
+  sor = int(f_input / 3)
+  oszlop = f_input
+  if oszlop > 2: oszlop = int(oszlop % 3)
+  return (sor,oszlop)
+
+def tabla_hadas(c_hely, tabla, fo_jatekos):
+  sor = c_hely[0]
+  oszlop = c_hely[1]
+  tabla[sor][oszlop] = fo_jatekos
+
+def jlnlg_jatekos(jatekos):
+  if jatekos: return "x"
+  else: return "o"
+
+def lht_nyrt(jatekos, tabla):
+  if c_sor(jatekos, tabla): return True
+  if c_oszlop(jatekos, tabla): return True
+  if c_atlo(jatekos, tabla): return True
+  return False
+
+def c_sor(jatekos, tabla):
+  for sor in tabla:
+    k_sor = True
+    for fhely in sor:
+      if fhely != jatekos:
+        k_sor = False
+        break
+    if k_sor: return True
+  return False 
+
+def c_oszlop(jatekos, tabla):
+  for oszlop in range(3):
+    k_oszlop = True
+    for sor in range(3):
+      if tabla[sor][oszlop] != jatekos:
+        k_oszlop = False
+        break
+    if k_oszlop: return True
+  return False
+
+def c_atlo(jatekos, tabla):
+  if tabla[0][0] == jatekos and tabla[1][1] == jatekos and tabla[2][2] == jatekos: return True
+  elif tabla[0][2] == jatekos and tabla[1][1] == jatekos and tabla[2][0] == jatekos: return True
+  else: return False
+
+while körök < 9:
+  fo_jatekos = jlnlg_jatekos(jatekos)
+  tabla_kiiras(tabla)
+  f_input = input("Adj meg egy számot 1-9es intervallumban!A kilépéshet nyomd meg a \"q\"-t :  ")
+  if kilepes(f_input): break
+  if not input_ell(f_input):
+    print("Próbáld meg újra")
+    continue
+  f_input = int(f_input) - 1
+  c_hely = poziciok(f_input)
+  if dup_szam(c_hely, tabla):
+    print("próbáld meg újra")
+    continue
+  tabla_hadas(c_hely, tabla, fo_jatekos)
+  if lht_nyrt(fo_jatekos, tabla): 
+    print(f"{fo_jatekos.upper()} A nyertes gratulálok!")
+    break
+  
+  körök += 1
+  if körök == 9: print("döntetlen ugyan olyan jók vagytok :)!")
+  jatekos = not jatekos
