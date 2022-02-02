@@ -938,3 +938,79 @@ legidosebb=adatok[0][legidosebb(adatok)]
     
 print("A legfiatalabb :  %s" %legfiatalabb)
 print("A legidosebb :  %s" %legidosebb)
+
+
+
+
+
+
+
+def ellenoriz(telSzam):
+    #elősször ellenőrizzük a sztring hosszát
+    while not (len(telSzam)==12 or len(telSzam)==13): 
+        print(len(telSzam))
+        print("A szám hosszúsága nem megfelelő!")
+        telSzam=input("""Adj meg egy formailag helyes mobilszámot!
+    A formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY""")    
+    #ellenőrizzük hogy megfelelően kezdődjön
+    while not (telSzam[0:3]=='+36' or telSzam[0:4]=='0036'):
+        print("A szám '+36'-tal vagy '0036'-tal kell, hogy kezdődjön")
+        telSzam=input("""Adj meg egy formailag helyes mobilszámot!
+A formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY""")
+    
+    #végül ellenőrizzük, hogy minden számjegy szám legyen
+    for i in range(-1,-11,-1):
+        if telSzam[i].isdecimal():
+            seged=True
+        else:
+            print("Nem megfelelő szám!")
+            seged=False
+            break
+    #ha valamelyik karakter nem szám, akkor újra kérjük
+    while not seged:
+        telSzam=input("""Adj meg egy formailag helyes mobilszámot!
+A formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY""")
+    #végül vissza adjuk az ellenőrzött sztringet
+    return telSzam
+
+#itt kezdődik maga a program
+
+
+telenor=(0)
+telekom=(0)
+digi=(0)
+vodafone=(0)
+kekszam=(0)
+zoldszam=(0)
+
+for s in range(5):
+    telSzam=input("""Adj meg még egy formailag helyes mobilszámot!(összesen 5 Telefonszámot adhatsz meg!)
+A formailag elfogadható számok: +36XXYYYYYYY vagy 0036XXYYYYYYY : """)
+#függvényhívással ellenőrizzük
+    telSzam=ellenoriz(telSzam)
+#végül kategorizáljuk szolgáltatók szerint
+    if telSzam[-9:-7]=='20':
+        print("Az adott szám a Telenor szolgáltatóhoz tartozik!")
+        telenor+=1
+    elif telSzam[-9:-7]=='30':
+        print("Az adott szám a Telekom szolgáltatóhoz tartozik!")
+        telekom+=1
+    elif telSzam[-9:-7]=='50':
+        print("Az adott szám a Digi szolgáltatóhoz tartozik!")
+        digi+=1
+    elif telSzam[-9:-7]=='70':
+        print("Az adott szám a Vodafone szolgáltatóhoz tartozik!")
+        vodafone+=1
+    elif telSzam[-9:-7]=='40':
+        print("Az adott szám egy kékszám!")
+        kekszam+=1
+    elif telSzam[-9:-7]=='80':
+        print("Az adott szám egy zöldszám")
+        zoldszam+=1
+
+print("Telenorból ennyi van: %d" %telenor)
+print("Telekomból ennyi van: %d" %telekom)
+print("digiből ennyi van: %d" %digi)
+print("vodafone-ból ennyi van: %d" %vodafone)
+print("kékszámból ennyi van: %d" %kekszam)
+print("zöldszámból ennyi van %d" %zoldszam)
