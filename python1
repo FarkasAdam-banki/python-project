@@ -1087,3 +1087,36 @@ print(darab)
 parossag=parossag(jegyek)
 print("páratln osztályzatok száma : %d  páros osztályzatok száma : %d "%(parossag[0],parossag[1]))
 bukás(jegyek)
+
+
+
+
+def szamell(x):
+    while (not (len(x)==6 and x.isdigit())):
+        print("A szán nem megfelelő hosszuságu")
+        return False
+    return True
+
+def helyes(x):
+    osszeg=0
+    for i in range(len(x)-1):
+        osszeg=osszeg+int(x[i])
+    maradek=osszeg%6
+    while maradek!=int(x[-1]):
+        print("A kód nem felel meg a kritériumoknak")
+        return False
+    return True
+
+kodok=[]
+
+x=input("Add meg a termék kódját")
+while x!='q':
+    while (not (szamell(x) and helyes(x))):
+        x=input("add meg újra helyesen")
+    kodok.append(x)
+    
+    
+
+    
+print(kodok)
+print("kilép")
