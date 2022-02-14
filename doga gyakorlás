@@ -364,3 +364,39 @@ amoba()
 
 
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+#adj meg egy termékodot amit addig kétsz amig nem lsez 'q' bemenet. a kodnak 0-val kell kezdődnie. és a számok összege nem lehet több mint 30 a kod 7 számjegybol álljon.
+
+def szamell (x):
+    while (not (len(x)==7 and x[0]=='0')):
+        print("Rossz input!")
+        x=input("Add meg újra a számot")
+        
+    return True
+
+
+def osszeg (x):
+    while (((int(x[1])+int(x[2])+int(x[3])+int(x[4])+int(x[5])+int(x[6]))>30)):
+        print("Ez nem lehet jó.")
+        x=input("Addja meg ujra a számot")
+        
+    return True
+    
+x=input("Addja meg a termékodot")
+
+while x!='q':
+    while (not(szamell(x) and osszeg(x))):
+        if x=='q':
+            break
+        break
+    if x=='q':
+        break
+    else:
+        x=input("Addjon meg még termékodot")
+print("kilépett!")
