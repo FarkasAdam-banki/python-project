@@ -400,3 +400,43 @@ while x!='q':
     else:
         x=input("Addjon meg még termékodot")
 print("kilépett!")
+
+
+
+
+#Kérj be egy számot ami 5 számjegyből állhat csak.
+#irj egy függvényt arra hogy a számok átlaga ne legyen több mint 5. 
+#irj egy föggvényt arra hogy 5 számjegyből álljom. asdasd
+#irj egy függvényt arra hogy az első szám 0 legyen asdasd
+#Ha 'q' input érkezik álljon le a program és a beérkezett inputokat tárulja el egy listába amit kilépéskor ki print-el
+
+
+def szamell(x):
+    while (not (len(x)==5 and x[0]=='0')):
+        print("Nem megfelelő szám")
+        x=input("Adj meg egy számot")
+    return True
+    
+def atlag(x):
+    
+    while (not(int(x[0]))+(int(x[1]))+(int(x[2]))+(int(x[3]))+(int(x[4]))/5>=5):
+        print("Nem jo szám")
+        x=input("Add meg a számot   ")
+    return True
+    
+
+x=input("Add meg az első számot")
+kodok=[]
+
+while x!='q':
+    while (not (szamell(x) and atlag(x))):
+        if x=='q':
+            break
+        break
+    if x=='q':
+        break
+    else:
+        kodok.append(x)
+        x=input("Addj meg még kodot")
+print("kilépett a programbol!")
+print(kodok)
