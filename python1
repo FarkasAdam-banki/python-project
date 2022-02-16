@@ -1120,3 +1120,35 @@ while x!='q':
     
 print(kodok)
 print("kilép")
+
+
+
+
+
+def szmhosz(x):
+    while (len(x)>20):
+        print("Nem megfelelő hosszuságu szám")
+        x=str(input("Addj meg egy max 20 betűből állo mondatot"))
+
+def maganh(x):
+    maganhangzok=['a','á','o','e','ö','ü','ú','ű','í','i','é','ó','ő','u',]
+    db=0
+    for i in x:
+        if i in maganhangzok:
+            db+=1
+    return db 
+
+x=str(input("Adj meg egy max 20 karakterből állo szöveget"))
+lista=[]
+
+
+
+
+szmhosz(x)
+maganh(x)
+for i in x:
+    lista.append(i)
+
+print(lista)
+darab=maganh(x)
+print(darab)
