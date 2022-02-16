@@ -1152,3 +1152,31 @@ for i in x:
 print(lista)
 darab=maganh(x)
 print(darab)
+
+
+
+
+x=input("Adj meg egy 10 karakter hoszu szöveget")
+
+while not(len(x)<=10 and x.isalpha()):
+    print("A szöveg túl hosszu")
+szoveg=[]  
+for i in range(len(x)) :
+    if i%2:
+        szoveg.append(x[i])
+    else:
+        szoveg.append(x[i].upper())
+x="".join(szoveg)
+print(x)
+
+
+
+x=input("Add meg a rendszámt")
+db=["JKL123","ABC987","QWE613","RTZ654"]
+while not(len(x)==6 and x[:3].isupper() and x[3:].isnumeric()):
+    x=input("Add meg a rendszámtábálát")
+    
+if x in db:
+    print("Beléphetsz")
+else:
+    print("Takarogyá")
