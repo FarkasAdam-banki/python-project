@@ -1180,3 +1180,27 @@ if x in db:
     print("Beléphetsz")
 else:
     print("Takarogyá")
+    
+    
+    
+    
+    
+    
+import csv
+
+with open("Munkafüzet1.csv","r")as f:
+    olvasott=csv.reader(f)
+    for sor in olvasott:
+        print(sor)
+        
+with open("uj_adatok.csv","w",newline='') as f:
+    irott=csv.writer(f,delimiter=';')
+    irott.writerow(["sorszám","vezeteknev","keresztnev","ev"])
+    irott.writerow([1,"kiss","jános","1986"])
+    
+with open("Munkafüzet1.csv","r",) as f:
+    konyvtar=csv.DictReader(f)
+    for sor in konyvtar:
+        print(dict(sor))
+        
+
