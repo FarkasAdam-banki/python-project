@@ -1203,4 +1203,42 @@ with open("Munkafüzet1.csv","r",) as f:
     for sor in konyvtar:
         print(dict(sor))
         
+'''Írj egy függvényt, amely beolvassa a fájl sorait egyesével
+és minden sorban megszámolja, hogy hány olyan szó van, amelyek 5 karakternél
+rövidebbek.
+Végül írasd ki, hogy az egyes sorokban hány ilyen szó volt, majd 
+összesen a teljes szövegben mennyi volt.
+A fájlt a classroomon találod!'''
+
+fajl=open("nemzeti-dal.txt", "r", encoding="utf-8")
+
+sorok=fajl.readlines()  #kiolvasom az összes sort egy listába  
+sordb=[] # ő lesz a számláló az egyes sorokban, egy lista
+sorokszama=len(sorok) # megszámolom a soraimat a fájlban
+for i in range(sorokszama):
+    sordb.append(0) # a számláló listát végig lenullázom
+db=0 # ő csak egy segédváltozó a számláláshoz
+osszdb=0 # ő számolja meg az összes keresett szót a fájlban
+betus=[]
+
+i=0 # segédváltozó az indexeléshez
+for sor in sorok: # vegig iterálok a sorokon
+    szavak=sor.split(" ") # szétvágom az egyes sorokat split-tel szavakká    
+    for szo in szavak: # végig iterálok a szavakon az egy soron belül
+        if "\n" in szo: # levágom a sortöréseket a sor végéről
+            szo=szo.replace("\n","")
+        if len(szo)<5: # ha a szó rövidebb mint 5 karakter akkor számolom
+            db+=1
+        if 'a' in szo:
+            betus.append(szo)
+    sordb[i]=db # bele rakom a megszámolt szavakat a számláló listába
+    i+=1 # növelnem kell az indexet a sordb-hez
+    db=0 # le kell nulláznom a db számlálót a sor végén   
+for i in range(len(sordb)): # végül kiíratom a soronkénti eredményet
+    print("Az %d. sorban %d keresett szó van!" %(i, sordb[i]))
+    osszdb+=sordb[i]
+
+print("A teljes szövegben %d db keresett szó van!" %osszdb) # ez pedig az össz
+print(betus)
+        
 
