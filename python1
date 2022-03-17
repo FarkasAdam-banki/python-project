@@ -1242,3 +1242,28 @@ print("A teljes szövegben %d db keresett szó van!" %osszdb) # ez pedig az öss
 print(betus)
         
 
+
+import csv
+
+
+napok=["Hétfő","Kedd","Szerda","Csütörtök","Péntek"]
+with open("nyilvantartas.csv","w",newline="") as f:
+    irott=csv.writer(f,delimiter=";")
+    irott.writerow(["A munkdaidő kezdete:","Munkaidő vége","Ledolgozott órák összesen"])
+    for i in range(5):
+        print("%si nap"%napok[i])
+        kezdet=(int(input("Addd meg a munkaidő kezdetét:")))
+        veg=(int(input("Add meg a munkaidő végét: ")))
+        irott.writerow([napok[i],kezdet,veg,veg-kezdet])
+    
+with open("nyilvantartas.csv","r") as f:
+    osz=0
+    olvasott=csv.reader(f)
+    for sor in olvasott:
+        oszlop=sor[0].split[";"]
+    if oszlop[0]=="":
+        pass
+    else:
+        osz+=int(oszlop[3])
+        
+print("heti ledolgozott orák osszesem: %d"%osz)
