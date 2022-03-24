@@ -1267,3 +1267,34 @@ with open("nyilvantartas.csv","r") as f:
         osz+=int(oszlop[3])
         
 print("heti ledolgozott orák osszesem: %d"%osz)
+
+
+
+
+
+
+f = open("szavak.txt", "r")
+sorok = f.readlines() 
+
+
+
+def szamlalo(sorok):
+    lista=[]
+    seged=[0,0]
+    
+    for i in sorok:
+        if i[-2]=='k':
+            seged[0]+=1
+            x=i.count('e')
+            if x>=2:
+                lista.append(i)
+        else:
+            seged[1]+=1
+        
+    return seged,lista
+    
+
+eredmeny2=szamlalo(sorok)
+print(eredmeny2)          
+
+
