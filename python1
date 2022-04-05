@@ -1298,3 +1298,23 @@ eredmeny2=szamlalo(sorok)
 print(eredmeny2)          
 
 
+
+
+f=open("auto.txt","r", encoding="UTF-8")
+sorok=f.readlines()
+
+def mon(sorok):
+    szavak=[szo for szo in szavak.read()if szo!="\n"]
+    szavak="".join(szavak)
+    szavak=szavak.split(".")
+    return szavak
+    
+    
+def met(szavak):
+    for i in szavak:
+        if "méter" in i:
+            print(i)
+
+
+
+met(szavak)
