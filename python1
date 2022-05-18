@@ -1351,3 +1351,109 @@ for i in range(10):
     
     szamlalo(t)
 
+
+
+
+
+
+"""
+Adott egy épület.txt fájl. Olvasd be az UTF-8 kódolású fájlban található adatokat és
+tárold el egy saját típusú objektum listában! Hozz létre ehhez egy megfelelő Epulet nevű
+osztályt! Ügyelj arra, hogy a fájl első sora a fejléc!
+
+Határozd meg és írd ki a képernyőre a minta szerint hogy hány épület található az 
+állományban.
+
+Határozd meg és írd ki a képernyőre a minta szerint a fájlban található  épületek
+emeleteinek számát.
+
+Határozd meg és írd ki a legmagasabb épület adatait. Feltételezheted, hogy nem 
+alakult ki holtverseny.
+"""
+from puletek import Epulet
+# csinálhattam volna: import Epuletek, de akkor később igy kell hivatkozni:
+# Epuletek.Epulet()
+# Hasonló példa: import random, ekkor ranom.randint()
+# De ha így importálom: from random import randint(), akkor elég csak a randint() 
+
+epuletek=[]
+lista=[]
+with open("epulet.txt", "r", encoding="utf-8") as fajl:
+    for sor in fajl.read().splitlines()[1:]:
+        print(sor)
+        epuletek.append(Epulet(sor))
+
+print("Épületek száma: %d db" %len(epuletek))
+
+for epulet in epuletek:
+    print("A(z) %s épület magassága: %d méter" %(epulet.nev, epulet.magassag))
+
+for epulet in epuletek:
+    print("A(z) %s épület emeleteinek száma: %d" %(epulet.nev, epulet.emelet))
+
+
+
+
+legmagasabb = epuletek[0]
+for epulet in epuletek[1:]:
+    if epulet.magassag > legmagasabb.magassag:
+        legmagasabb = epulet
+print("A legmagasabb épület adatai:")
+print("Név: %s" %legmagasabb.nev)
+print("Város: %s" %legmagasabb.varos)
+print("Ország: %s" %legmagasabb.orszag)
+print("Magasság: %.2fm" %legmagasabb.magassag)
+print("Emeletek száma: %d" %legmagasabb.emelet)
+print("Épült: %d évben" %legmagasabb.epult)
+
+orosz=[]
+olasz=[]
+for epulet in epuletek:
+    if epulet.orszag=="Oroszország":
+        orosz.append(epulet)
+    elif epulet.orszag=="Olaszország":
+        olasz.append(epulet)
+        
+def sort_key(epuletek):
+    return epuletek.magassag
+    
+szam1=0    
+olasz.sort(key=sort_key, reverse=True)
+orosz.sort(key=sort_key, reverse=True)
+print("olasz épületek sorban : ")
+for sor in olasz:
+    print(sor.nev + ", "+str(sor.magassag)+"m"+", "+str(sor.emelet))
+    szam1+=int(sor.emelet)
+
+
+    
+    
+szam=0    
+print("orosz épületek sorban : ")
+for sor in orosz:
+    print(sor.nev + ", "+str(sor.magassag)+"m"+", "+str(sor.emelet))
+    szam+=int(sor.emelet)
+
+szam2=0
+szam2=szam1+szam
+print("Az orosz és az olasz épületek emeleteinek összege :" ,szam2)
+
+leghosszabb = epuletek[0]
+for x in epuletek[1:]:
+    if len(x.varos) > len(leghosszabb.varos):
+        leghosszabb = x
+lista=[]
+print("Város: %s" %leghosszabb.varos)
+for i in epuletek:
+    if i.varos==leghosszabb.varos:
+        lista.append(i.nev)
+print(lista)
+        
+
+    
+
+    
+    
+
+
+    
